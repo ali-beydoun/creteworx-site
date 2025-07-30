@@ -13,9 +13,11 @@
     --white: #ffffff;
     --gray: #6c757d;
     --success: #28a745;
-    --transition: all 0.3s ease;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow: 0 5px 15px rgba(0,0,0,0.1);
     --shadow-hover: 0 10px 25px rgba(0,0,0,0.15);
+    --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
 }
 
 body {
@@ -119,11 +121,22 @@ img[alt]:after {
 
 /* Hero Section Enhanced */
 .hero {
-    background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(74,144,226,0.95)), url('../images/PHOTO-2025-07-10-18-53-31.jpg') center/cover;
+    background: linear-gradient(135deg, rgba(26,26,26,0.85), rgba(26,26,26,0.7)), url('../images/PHOTO-2025-07-10-18-53-38.jpg') center/cover;
     color: var(--white);
-    padding: 5rem 0;
+    padding: 6rem 0;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .hero-features {
@@ -139,6 +152,20 @@ img[alt]:after {
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.3);
     font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    opacity: 0.9;
 }
 
 .hero-cta {
@@ -212,6 +239,19 @@ img[alt]:after {
 .services {
     padding: 4rem 0;
     background: var(--light-bg);
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L50 100 L100 0' fill='%23ffffff' /%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    transform: translateY(-99%);
 }
 
 .services h2 {
@@ -249,6 +289,18 @@ img[alt]:after {
 .carousel-section {
     padding: 4rem 0;
     background: var(--white);
+    position: relative;
+}
+
+.carousel-section::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--light-bg));
+    pointer-events: none;
 }
 
 .carousel-section h2 {
@@ -495,6 +547,18 @@ img[alt]:after {
     font-weight: bold;
     z-index: 2;
     box-shadow: var(--shadow-hover);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pin-icon {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .service-ring {
