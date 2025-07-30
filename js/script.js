@@ -1,3 +1,51 @@
+// Carousel functionality
+let slideIndex = 1;
+
+function changeSlide(n) {
+    showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+    const slides = document.getElementsByClassName('carousel-slide');
+    const indicators = document.getElementsByClassName('indicator');
+    
+    if (!slides.length) return;
+    
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+    }
+    
+    // Remove active class from indicators
+    for (let i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove('active');
+    }
+    
+    // Show current slide and indicator
+    slides[slideIndex - 1].classList.add('active');
+    if (indicators[slideIndex - 1]) {
+        indicators[slideIndex - 1].classList.add('active');
+    }
+    
+    // Update carousel position
+    const carousel = document.querySelector('.carousel-inner');
+    if (carousel) {
+        carousel.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+    }
+}
+
+// Auto-advance carousel
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+
 // Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');

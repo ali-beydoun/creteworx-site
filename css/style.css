@@ -220,6 +220,106 @@ img[alt]:after {
     margin-bottom: 1rem;
 }
 
+/* Carousel Section */
+.carousel-section {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.carousel-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow-hover);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6), transparent);
+    color: var(--white);
+    padding: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.carousel-control:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: var(--white);
+    transform: scale(1.2);
+}
+
 /* Customer Segments Section */
 .customer-segments {
     padding: 4rem 0;
@@ -677,5 +777,19 @@ footer {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .carousel-control {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .carousel-caption {
+        padding: 1rem;
+        font-size: 1rem;
     }
 }
