@@ -976,6 +976,43 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+/* Contact Page Simplified */
+.contact-grid-simple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.call-section {
+    text-align: center;
+}
+
+.call-box-large {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-hover);
+    margin-top: 2rem;
+}
+
+.call-box-large h3 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.call-box-large p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.availability {
+    margin-top: 1.5rem !important;
+    font-weight: 600;
+    font-size: 1.2rem !important;
+}
+
 .btn-large {
     font-size: 1.2rem;
     padding: 1rem 2.5rem;
@@ -1088,5 +1125,14 @@ footer {
     .process-step {
         max-width: 300px;
         margin: 0 auto;
+    }
+
+    .contact-grid-simple {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .call-box-large h3 {
+        font-size: 2rem;
     }
 }
