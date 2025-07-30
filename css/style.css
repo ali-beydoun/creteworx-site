@@ -117,7 +117,7 @@ img[alt]:after {
     transition: var(--transition);
 }
 
-/* Hero Section */
+/* Hero Section Enhanced */
 .hero {
     background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(74,144,226,0.95)), url('../images/PHOTO-2025-07-10-18-53-31.jpg') center/cover;
     color: var(--white);
@@ -126,11 +126,36 @@ img[alt]:after {
     position: relative;
 }
 
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.feature {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.95rem;
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin: 2rem 0;
+}
+
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .hero-trust {
@@ -407,22 +432,124 @@ img[alt]:after {
     margin-bottom: 1rem;
 }
 
-/* Service Areas Section */
+/* Carousel More Link */
+.carousel-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.see-more-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.see-more-link:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Service Areas Section Enhanced */
 .service-areas {
     background: var(--light-bg);
-    padding: 3rem 0;
+    padding: 4rem 0;
     text-align: center;
 }
 
 .service-areas h2 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
-.service-areas p {
-    font-size: 1.1rem;
+.service-intro {
+    font-size: 1.2rem;
     color: var(--gray);
+    margin-bottom: 3rem;
+}
+
+/* Sydney Map Visual */
+.sydney-map-visual {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto 3rem;
+}
+
+.map-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: var(--shadow-hover);
+}
+
+.service-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border: 3px dashed var(--accent-color);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Areas Grid Expanded */
+.areas-grid-expanded {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.area-list.popular {
+    position: relative;
+    border: 2px solid var(--secondary-color);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.distance-message {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.distance-message p {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 /* CTA Section */
@@ -1018,6 +1145,116 @@ footer {
     padding: 1rem 2.5rem;
 }
 
+/* Gallery Page Styles */
+.gallery-header {
+    background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(74,144,226,0.8)), url('../images/PHOTO-2025-07-10-18-53-33.jpg') center/cover;
+}
+
+.gallery-intro {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.service-radius {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 10px;
+}
+
+.service-radius h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.region {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+}
+
+.region h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.region p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.gallery-filters {
+    padding: 2rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--secondary-color);
+    background: var(--white);
+    color: var(--secondary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.gallery-grid-section {
+    padding: 2rem 0 4rem;
+    background: var(--light-bg);
+}
+
+.gallery-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-cta {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.gallery-cta h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.cta-content {
+    margin: 2rem 0;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
 /* Phone Number Styling */
 .phone-number {
     font-size: 1.5rem;
@@ -1134,5 +1371,27 @@ footer {
 
     .call-box-large h3 {
         font-size: 2rem;
+    }
+
+    .hero-features {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .feature {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .sydney-map-visual {
+        display: none;
+    }
+
+    .areas-grid-expanded {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid-full {
+        grid-template-columns: 1fr;
     }
 }
