@@ -715,6 +715,247 @@ footer {
     flex-wrap: wrap;
 }
 
+/* Residential Page Styles */
+.residential-hero {
+    background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(255,107,53,0.8)), url('../images/PHOTO-2025-07-10-18-53-38.jpg') center/cover;
+    padding: 4rem 0;
+}
+
+.residential-intro {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.benefits-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.benefit-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow-hover);
+}
+
+.residential-services {
+    background: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.res-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.res-service-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.res-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.res-service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.res-service-card h3 {
+    color: var(--primary-color);
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.res-service-card ul {
+    padding: 0 1.5rem;
+    list-style: none;
+}
+
+.res-service-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.res-service-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+}
+
+.price-guide {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    margin: 1.5rem 0 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.process-section {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.process-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+.process-timeline:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: var(--secondary-color);
+    z-index: 0;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.residential-gallery {
+    background: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.res-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.res-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.res-gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.res-gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: var(--white);
+    padding: 2rem 1rem 1rem;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.res-gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-section {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial cite {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.residential-cta {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.residential-cta h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.cta-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
 /* Phone Number Styling */
 .phone-number {
     font-size: 1.5rem;
@@ -798,5 +1039,29 @@ footer {
     .carousel-caption {
         padding: 1rem;
         font-size: 1rem;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .process-timeline:before {
+        display: none;
+    }
+
+    .res-services-grid,
+    .res-gallery-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
