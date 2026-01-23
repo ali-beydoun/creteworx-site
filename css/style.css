@@ -357,7 +357,7 @@ img[alt]:after {
     background: #1a1a1a;
 }
 
-/* Background image - concrete texture */
+/* Background image */
 .hero::after {
     content: '';
     position: absolute;
@@ -365,7 +365,7 @@ img[alt]:after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/hero-texture.jpg') center/cover;
+    background: url('../images/residential-hero.jpg') center/cover;
     z-index: 1;
 }
 
