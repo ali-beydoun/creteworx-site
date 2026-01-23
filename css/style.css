@@ -350,19 +350,21 @@ img[alt]:after {
 }
 
 .feature {
-    background: var(--glass-white-subtle);
+    background: rgba(255, 255, 255, 0.12);
     padding: 0.6rem 1.2rem;
     border-radius: 100px;
-    border: 1px solid var(--border-glass);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    backdrop-filter: var(--glass-blur-light);
-    -webkit-backdrop-filter: var(--glass-blur-light);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     transition: var(--transition);
     font-weight: 500;
     letter-spacing: 0.02em;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .feature:hover {
@@ -387,26 +389,32 @@ img[alt]:after {
     font-size: 1.2rem;
     padding: 1rem 2.5rem;
     background: var(--gradient-orange);
-    border: none;
-    box-shadow: var(--shadow-orange);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4), 0 2px 8px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .hero-cta .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-orange-lg);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5), 0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .hero-cta .btn-secondary {
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.3);
     color: var(--white);
     font-size: 1rem;
     padding: 0.9rem 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .hero-cta .btn-secondary:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .btn-pulse {
@@ -421,10 +429,11 @@ img[alt]:after {
 
 .hero-trust {
     font-size: 0.85rem;
-    opacity: 0.7;
+    opacity: 0.85;
     margin-top: 3rem;
     font-weight: 400;
     letter-spacing: 0.03em;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
 }
 
 .hero h1 {
@@ -433,10 +442,12 @@ img[alt]:after {
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
     margin-bottom: 2.5rem;
     opacity: 0.9;
     font-weight: 400;
