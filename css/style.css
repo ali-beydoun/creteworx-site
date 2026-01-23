@@ -236,20 +236,23 @@ header.scrolled {
 
 .logo-text {
     font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--charcoal);
+    font-weight: 800;
+    color: var(--black);
     letter-spacing: -0.02em;
     line-height: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-text .tagline {
     display: block;
-    font-size: 0.55rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--stone);
-    margin-top: 0.2rem;
+    color: var(--black);
+    margin-top: 0.25rem;
+    opacity: 0.7;
 }
 
 .logo:hover .logo-icon {
@@ -263,11 +266,11 @@ header.scrolled {
     }
 
     .logo-text {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     .logo-text .tagline {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
     }
 }
 
@@ -2022,13 +2025,7 @@ footer {
         top: 70px;
         width: 100%;
         height: calc(100vh - 70px);
-        background: linear-gradient(
-            180deg,
-            rgba(250, 249, 247, 0.98) 0%,
-            rgba(255, 255, 255, 0.98) 100%
-        );
-        backdrop-filter: blur(30px) saturate(150%);
-        -webkit-backdrop-filter: blur(30px) saturate(150%);
+        background: var(--cream);
         transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 998;
         overflow-y: auto;
@@ -2038,6 +2035,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
         align-content: start;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 
     .nav-menu.active {
@@ -2056,18 +2054,10 @@ footer {
         justify-content: center;
         padding: 1.25rem 0.75rem;
         min-height: 95px;
-        background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(255, 255, 255, 0.7) 100%
-        );
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: var(--white);
         border-radius: 18px;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        box-shadow:
-            0 4px 20px rgba(0, 0, 0, 0.04),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         color: var(--charcoal);
         text-decoration: none;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2100,29 +2090,22 @@ footer {
         text-align: center;
     }
 
-    /* Active state - orange glow */
+    /* Active state - orange accent */
     .nav-menu a.active {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 107, 53, 0.15) 0%,
-            rgba(255, 107, 53, 0.08) 100%
-        );
-        border-color: rgba(255, 107, 53, 0.3);
-        color: var(--secondary-color);
-        box-shadow:
-            0 4px 25px rgba(255, 107, 53, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        background: var(--orange);
+        border-color: var(--orange);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     }
 
     .nav-menu a.active .nav-icon svg {
-        stroke: var(--secondary-color);
-        filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.4));
+        stroke: var(--white);
     }
 
     /* Touch feedback */
-    .nav-menu a:active {
+    .nav-menu a:active:not(.active) {
         transform: scale(0.95);
-        background: rgba(0, 0, 0, 0.04);
+        background: var(--cloud);
     }
 
     /* Staggered animation */
@@ -2149,6 +2132,20 @@ footer {
     .nav-toggle {
         display: flex;
         z-index: 1001;
+    }
+
+    /* Mobile logo sizing */
+    .logo-icon {
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-text .tagline {
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
     }
 
     .hero {
