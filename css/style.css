@@ -126,6 +126,23 @@
 [data-stagger] > *:nth-child(5) { transition-delay: 320ms; }
 [data-stagger] > *:nth-child(6) { transition-delay: 400ms; }
 
+/* Disable scroll animations on mobile - always show content */
+@media (max-width: 768px) {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
 /* ==========================================
    SVG ICON SYSTEM
    ========================================== */
