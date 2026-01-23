@@ -75,72 +75,13 @@
 }
 
 /* ==========================================
-   SCROLL ANIMATIONS - Apple-like Fluidity
+   SCROLL ANIMATIONS - Disabled (no JS handler)
    ========================================== */
 
-/* Base state for animated elements */
+/* All animated elements show immediately */
 [data-animate] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s var(--ease-out-expo),
-                transform 0.8s var(--spring-soft);
-}
-
-[data-animate="fade"] {
-    transform: translateY(0);
-}
-
-[data-animate="slide-up"] {
-    transform: translateY(40px);
-}
-
-[data-animate="slide-left"] {
-    transform: translateX(40px);
-}
-
-[data-animate="slide-right"] {
-    transform: translateX(-40px);
-}
-
-[data-animate="scale"] {
-    transform: scale(0.95);
-}
-
-[data-animate="spring"] {
-    transform: translateY(60px) scale(0.98);
-    transition: opacity 0.6s var(--ease-out-expo),
-                transform 0.8s var(--spring);
-}
-
-/* Visible state */
-[data-animate].is-visible {
     opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
-}
-
-/* Stagger delays for children */
-[data-stagger] > *:nth-child(1) { transition-delay: 0ms; }
-[data-stagger] > *:nth-child(2) { transition-delay: 80ms; }
-[data-stagger] > *:nth-child(3) { transition-delay: 160ms; }
-[data-stagger] > *:nth-child(4) { transition-delay: 240ms; }
-[data-stagger] > *:nth-child(5) { transition-delay: 320ms; }
-[data-stagger] > *:nth-child(6) { transition-delay: 400ms; }
-
-/* Disable scroll animations on mobile - always show content */
-@media (max-width: 768px) {
-    [data-animate] {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    [data-animate] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
+    transform: none;
 }
 
 /* ==========================================
