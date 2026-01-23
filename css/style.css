@@ -332,9 +332,7 @@ img[alt]:after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26,26,26,0.55), rgba(26,26,26,0.4));
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: linear-gradient(180deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.35) 100%);
     z-index: 2;
 }
 
@@ -1324,9 +1322,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26,26,26,0.55), rgba(26,26,26,0.4));
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: linear-gradient(180deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.35) 100%);
     z-index: 2;
 }
 
