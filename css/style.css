@@ -639,6 +639,26 @@ img[alt]:after {
     box-shadow: var(--shadow-md);
 }
 
+.service-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--spring);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
 .service-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.75rem;
