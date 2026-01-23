@@ -291,7 +291,7 @@ img[alt]:after {
 /* Hero Section Enhanced */
 .hero {
     color: var(--white);
-    padding: 7rem 0 8rem;
+    padding: 5rem 0 5.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -474,15 +474,15 @@ img[alt]:after {
 
 /* Services Section */
 .services {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: var(--white);
     position: relative;
 }
 
 .services h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.75rem;
     color: var(--primary-color);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -546,7 +546,7 @@ img[alt]:after {
 
 /* Carousel Section */
 .carousel-section {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: var(--white);
     position: relative;
 }
@@ -671,15 +671,15 @@ img[alt]:after {
 
 /* Customer Segments Section */
 .customer-segments {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .customer-segments h2 {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.75rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -779,15 +779,15 @@ img[alt]:after {
 
 /* Why Choose Section */
 .why-choose {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .why-choose h2 {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2.8rem;
-    margin-bottom: 3.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -795,7 +795,7 @@ img[alt]:after {
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .benefit {
@@ -861,7 +861,7 @@ img[alt]:after {
 /* Service Areas Section Enhanced */
 .service-areas {
     background: var(--light-bg);
-    padding: 4rem 0;
+    padding: 3rem 0;
     text-align: center;
 }
 
@@ -970,7 +970,7 @@ img[alt]:after {
 .cta {
     background: var(--gradient-dark);
     color: var(--white);
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1162,15 +1162,15 @@ footer {
 
 /* Gallery Section */
 .gallery {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: var(--cream);
 }
 
 .gallery h2 {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -1296,7 +1296,7 @@ footer {
 /* Residential Page Styles */
 .residential-hero {
     background: #1a1a1a;
-    padding: 5rem 0;
+    padding: 4rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -1370,7 +1370,7 @@ footer {
 }
 
 .residential-intro {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: var(--white);
 }
 
@@ -1424,7 +1424,7 @@ footer {
 
 .residential-services {
     background: var(--light-bg);
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .res-services-grid {
@@ -1502,7 +1502,7 @@ footer {
 }
 
 .process-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: var(--white);
 }
 
@@ -1511,7 +1511,7 @@ footer {
     justify-content: space-between;
     position: relative;
     max-width: 1000px;
-    margin: 3rem auto 0;
+    margin: 2rem auto 0;
 }
 
 .process-timeline:before {
@@ -1553,7 +1553,7 @@ footer {
 
 .residential-gallery {
     background: var(--light-bg);
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .res-gallery-grid {
@@ -1601,7 +1601,7 @@ footer {
 }
 
 .testimonial-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: var(--white);
 }
 
@@ -1631,7 +1631,7 @@ footer {
 .residential-cta {
     background: var(--primary-color);
     color: var(--white);
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     text-align: center;
 }
 
@@ -1648,15 +1648,15 @@ footer {
 
 /* FAQ Section */
 .faq-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: var(--white);
 }
 
 .faq-section h2 {
     text-align: center;
     color: var(--charcoal);
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.8rem;
 }
 
 .faq-grid {
@@ -1687,15 +1687,15 @@ footer {
 
 /* Service Areas - Residential */
 .service-areas-residential {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: var(--light-bg);
     text-align: center;
 }
 
 .service-areas-residential h2 {
     color: var(--charcoal);
-    margin-bottom: 0.75rem;
-    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
 }
 
 .areas-intro {
@@ -1861,7 +1861,7 @@ footer {
 }
 
 .gallery-grid-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: white;
 }
 
@@ -1933,7 +1933,7 @@ footer {
 /* Gallery CTA */
 .gallery-cta {
     background: linear-gradient(135deg, #f8f8f8, #ffffff);
-    padding: 5rem 0;
+    padding: 3rem 0;
     text-align: center;
 }
 
