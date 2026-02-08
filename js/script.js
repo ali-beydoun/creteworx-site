@@ -81,28 +81,77 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Contact form handling
+    // Contact form handling - FormSubmit.co AJAX
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // In a real implementation, this would send to a server
-            // For now, we'll just show an alert
-            alert('Thank you for your message! We will get back to you soon.\n\n' + 
-                  'Name: ' + data.name + '\n' +
-                  'Email: ' + data.email + '\n' +
-                  'Phone: ' + data.phone + '\n' +
-                  'Project: ' + data['project-type'] + '\n' +
-                  'Message: ' + data.message);
-            
-            // Reset form
-            contactForm.reset();
+
+            const submitBtn = this.querySelector('.btn-submit');
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+            }
+
+            try {
+                const formData = new FormData(this);
+
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' },
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const result = await response.json();
+                    if (result.success === 'true' || result.success === true) {
+                        showFormSuccess(formData.get('name'));
+                    } else {
+                        throw new Error(result.message || 'Submission failed');
+                    }
+                } else {
+                    showFormSuccess(formData.get('name'));
+                }
+            } catch (error) {
+                let message = 'Something went wrong. ';
+                if (error.name === 'AbortError') {
+                    message += 'The request timed out. Please try again.';
+                } else if (!navigator.onLine) {
+                    message += 'Check your internet connection.';
+                } else {
+                    message += 'Give us a call on 0414 240 662 instead!';
+                }
+                alert(message);
+                if (submitBtn) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }
+            }
         });
+    }
+
+    function showFormSuccess(name) {
+        const form = document.getElementById('contact-form');
+        const success = document.getElementById('formSuccess');
+        if (form && success) {
+            form.style.display = 'none';
+            const userName = success.querySelector('.user-name');
+            if (userName && name) {
+                userName.textContent = name;
+            }
+            success.style.display = 'block';
+        }
     }
 
     // Smooth scrolling for anchor links
@@ -118,6 +167,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Scroll to hash target on page load (e.g. contact.html#quote-form)
+    if (window.location.hash) {
+        const hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget) {
+            setTimeout(() => {
+                hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
 
     // Add scroll effect to header
     const header = document.querySelector('header');
